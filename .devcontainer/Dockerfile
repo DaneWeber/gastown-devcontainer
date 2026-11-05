@@ -39,6 +39,7 @@ RUN useradd --create-home --shell /bin/bash --uid 1000 vscode \
 
 ENV PATH="/home/vscode/.local/bin:/home/vscode/go/bin:/usr/local/go/bin:${PATH}" \
     GOPATH="/home/vscode/go" \
+    SHELL=/bin/bash \
     TERM=xterm-256color
 
 USER vscode

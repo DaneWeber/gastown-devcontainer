@@ -38,6 +38,7 @@ Create the town **outside this repository**, in the persistent home volume:
 
 ```bash
 gt install ~/gt --shell --git
+source ~/.bashrc
 cd ~/gt
 gt rig add myproject https://github.com/you/your-project.git
 gt enable
@@ -80,4 +81,6 @@ Dolt data, agent login, and shell configuration across rebuilds. The repository
 remains in the normal Dev Containers workspace mount. Removing the home volume
 deletes that state, including credentials; back up valuable work first. Keeping
 Dolt data in a Docker volume also avoids macOS bind-mount journaling issues.
+Codespaces **Full Rebuild** clears cached Docker volumes, so back up the town
+before a full rebuild or deleting a codespace; do not treat this volume as a backup.
 The container does not mount the Docker socket or require privileged mode.
